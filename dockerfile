@@ -14,7 +14,7 @@ RUN case "$TARGETPLATFORM" in \
 # This is just to log the platforms (optional)
 RUN echo "I am building for $TARGETPLATFORM" > /log
 
-EXPOSE 443 80
+EXPOSE 24222 24280
 
 VOLUME /config
 
