@@ -161,6 +161,7 @@ type HTTPConfig struct {
 	HTTPSPort string `validate:"required,containsany=0123456789,min=1,max=6"`
 	ProxyConfig ProxyConfig
 	Hostname string `validate:"required,excludesall=0x2C/ "`
+	AllowHTTPLocalIPAccess bool `validate:"omitempty"`
 	SSLEmail string `validate:"omitempty,email"`
 	UseWildcardCertificate bool
 	OverrideWildcardDomains string `validate:"omitempty,excludesall=/ "`
@@ -225,7 +226,7 @@ type ProxyRouteConfig struct {
 	AcceptInsecureHTTPSTarget bool
 	HideFromDashboard bool
 	DisableHeaderHardening bool
-	VerboseForwardHeader bool
+	SpoofHostname bool
 	AddionalFilters []AddionalFiltersConfig
 	RestrictToConstellation bool
 	OverwriteHostHeader string
